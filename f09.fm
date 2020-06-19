@@ -1,0 +1,14 @@
+// Especificando um tipo
+// =====================
+// - Um tipo é como um conjunto com N elementos
+
+T Cor
+| amarelo;
+| verde;
+| azul;
+| roxo;
+| vermelho;
+| laranja;
+
+cor_favorita: Cor
+  azul

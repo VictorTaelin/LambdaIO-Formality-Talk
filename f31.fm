@@ -1,0 +1,10 @@
+// O tipo lista
+// ============
+
+// Uma lista de T é:
+// - Uma lista vazia (nil);
+// - Ou a junção (cons) de uma cor a uma lista de outras cores;
+
+T List<T: Type>
+| nil;
+| cons(head: T, tail: List(T));

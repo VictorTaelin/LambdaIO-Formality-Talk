@@ -1,0 +1,14 @@
+// O tipo Subset
+// =============
+
+T Subset<A: Type, B: A -> Type>
+| subset(a: A)<b: B(a)>;
+
+TrueBool: Type
+  Subset(Bool, IsTrue)
+
+so_verdadeiro_2(x: TrueBool): String
+  "deu certo"
+
+chamando_2: String
+  so_verdadeiro_2(subset<Bool,IsTrue>(true)<unit>)

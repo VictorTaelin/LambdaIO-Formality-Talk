@@ -1,0 +1,6 @@
+// Do vazio, tudo se cria
+// ======================
+
+void(empty: Empty): 1 == 0
+  case empty:
+  : 1 == 0;

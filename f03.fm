@@ -1,0 +1,10 @@
+// Por que tipos dependentes importam?
+// ===================================
+
+# // TypeScript
+function div(a: Number, b: Number) {
+  assert(b !== 0);
+  return a / b;
+} #
+
+// Melhor, mas ainda checa algo em tempo de execução

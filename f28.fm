@@ -1,0 +1,5 @@
+// Provando teoremas
+// =================
+
+// teorema_giratorio(cor: Cor): desgirar(girar(cor)) == cor
+//  ?what

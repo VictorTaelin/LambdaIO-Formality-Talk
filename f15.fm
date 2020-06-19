@@ -1,0 +1,5 @@
+// Provando teoremas
+// =================
+
+cor_favorita_eh_azul: cor_favorita == azul
+  proprio<_, azul>

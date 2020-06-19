@@ -1,0 +1,8 @@
+// Formality
+// =========
+// - Puramente funcional (como Haskell)
+// - Tipos dependentes e provas formais
+// - Minimalista: interpreter + type-checker = 500 LOC
+// - Sintaxe familiar (estilo JavaScript)
+// - Eficiente (compila pra .js, .hs ou .fmnet)
+// - Moonad.org: package manager ou rede social?

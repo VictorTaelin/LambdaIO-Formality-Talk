@@ -1,0 +1,11 @@
+// Programando funções
+// ===================
+
+// amarelar(cor: Cor): Sentido
+//   case cor:
+//   | amarelo  => ?what;
+//   | verde    => anti_horario;
+//   | azul     => anti_horario;
+//   | roxo     => horario; // tanto faz
+//   | vermelho => horario;
+//   | laranja  => horario;

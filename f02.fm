@@ -1,0 +1,14 @@
+// Por que tipos dependentes importam?
+// ===================================
+
+# // JavaScript
+function div(a, b) {
+  assert(typeof a === "number");
+  assert(typeof b === "number");
+  assert(b !== 0);
+  return a / b;
+} #
+
+// Checagem em tempo de execução:
+// 1. Afeta performance
+// 2. Crasha o programa

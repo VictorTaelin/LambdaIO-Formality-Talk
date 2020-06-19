@@ -1,0 +1,12 @@
+// Provando teoremas
+// =================
+
+cor_descida_nao_eh_amarelo(cor: Cor): descer(cor) != amarelo
+  case cor:
+  | amarelo  => comparar(verde, amarelo);
+  | verde    => comparar(azul, amarelo);
+  | azul     => comparar(roxo, amarelo);
+  | roxo     => comparar(roxo, amarelo);
+  | vermelho => comparar(roxo, amarelo);
+  | laranja  => comparar(vermelho, amarelo);
+  : descer(cor.self) != amarelo;

@@ -1,0 +1,7 @@
+// Programando funções
+// ===================
+
+// alguma_funcao(cor: Cor): Sentido
+//   amarelar(cor)<?what>
+
+// Impossível chamar amarelar em uma variável "cor"!

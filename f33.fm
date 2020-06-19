@@ -1,0 +1,10 @@
+// Primeiro elemento
+// =================
+
+head<T: Type>(list: List(T), not_empty: list != nil<T>): T
+  case list:
+  with not_empty : list.self != nil<T> = not_empty;
+  | nil  => Empty.absurd<>(not_empty(_));
+  | cons => list.head;
+
+// No Formality, podemos evitar esse erro em tempo de compilação.

@@ -1,0 +1,13 @@
+// O tipo vazio
+// ============
+
+// Cor tem 6 elementos, Bool tem 2, Unit tem 1... Vazio tem 0?
+
+// T Bool
+// | true;
+// | false;
+
+// T Unit
+// | unit;
+
+// T Empty

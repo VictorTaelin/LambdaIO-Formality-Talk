@@ -1,0 +1,12 @@
+// Programando funções
+// ===================
+// - Funções são feitas por análise de casos
+
+subir(cor: Cor): Cor
+  case cor:
+  | amarelo  => amarelo;
+  | verde    => amarelo;
+  | azul     => verde;
+  | roxo     => vermelho;
+  | vermelho => laranja;
+  | laranja  => amarelo;

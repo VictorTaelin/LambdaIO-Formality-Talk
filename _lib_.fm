@@ -1,0 +1,96 @@
+T Decision<A: Type>
+| Decision.yep(proof: A);
+| Decision.nop(proof: Not(A));
+
+Decision.get.type(A: Type, dec: Decision(A)): Type
+  case dec:
+  | A;
+  | Not(A);
+
+Decision.get<A: Type>(dec: Decision(A)): Decision.get.type(A, dec)
+  case dec:
+  | dec.proof;
+  | dec.proof;
+  : Decision.get.type(A, dec.self);
+
+Nat.Compare(n: Nat, m: Nat): Decision(Equal(Nat, n, m))
+  case n:
+  | case m:
+    | Decision.yep<>(Equal.to<Nat, Nat.zero>);
+    | Decision.nop<>(Nat.zero_isnt_succ<m.pred>);
+    : Decision(Equal(Nat, Nat.zero, m.self));;
+  | case m:
+    | Decision.nop<>(Nat.succ_isnt_zero<n.pred>);
+    | case Nat.Compare(n.pred, m.pred) as cmp:
+      | Decision.yep<>(Equal.apply<Nat, Nat, n.pred, m.pred, Nat.succ>(cmp.proof));
+      | Decision.nop<>((x) cmp.proof(Equal.apply<Nat, Nat, Nat.succ(n.pred), Nat.succ(m.pred), Nat.pred>(x)));;
+    : Decision(Equal(Nat, Nat.succ(n.pred), m.self));;
+  : Decision(Equal(Nat, n.self, m));
+    
+Cor.nat(cor: Cor): Nat
+  case cor:
+  | amarelo  => 0;
+  | verde    => 1;
+  | azul     => 2;
+  | roxo     => 3;
+  | vermelho => 4;
+  | laranja  => 5;
+
+Nat.cor(nat: Nat): Cor
+  case nat:
+  | amarelo;
+  | case nat.pred:
+    | verde;
+    | case nat.pred.pred:
+      | azul;
+      | case nat.pred.pred.pred:
+        | roxo;
+        | case nat.pred.pred.pred.pred:
+          | vermelho;
+          | laranja;;;;;
+
+Cor.nat_injection(cor: Cor): Equal(Cor, Nat.cor(Cor.nat(cor)), cor)
+  case cor:
+  | amarelo  => Equal.to<_, amarelo>;
+  | verde    => Equal.to<_, verde>;
+  | azul     => Equal.to<_, azul>;
+  | roxo     => Equal.to<_, roxo>;
+  | vermelho => Equal.to<_, vermelho>;
+  | laranja  => Equal.to<_, laranja>;
+  : Equal(Cor, Nat.cor(Cor.nat(cor.self)), cor.self);
+
+Cor.Compare(a: Cor, b: Cor): Decision(Equal(Cor, a, b))
+  case Nat.Compare(Cor.nat(a), Cor.nat(b)) as cmp:
+  | Decision.yep<Equal(Cor, a, b)>(
+    let e0 = Equal.apply<Nat, Cor, Cor.nat(a), Cor.nat(b), Nat.cor>(cmp.proof)
+    let e1 = Equal.rewrite<Cor, Nat.cor(Cor.nat(a)), a, (x) Equal(Cor, x, Nat.cor(Cor.nat(b)))>(Cor.nat_injection(a), e0)
+    let e2 = Equal.rewrite<Cor, Nat.cor(Cor.nat(b)), b, (x) Equal(Cor, a, x)>(Cor.nat_injection(b), e1)
+    e2);
+  | Decision.nop<>((x) cmp.proof(Equal.apply<Cor, Nat, a, b, Cor.nat>(x)));
+
+comparar(a: Cor, b: Cor): Decision.get.type(Equal(Cor,a,b), Cor.Compare(a, b))
+  Decision.get<Equal(Cor,a,b)>(Cor.Compare(a,b))
+
+absurdo: _
+  Empty.absurd
+
+proprio: _
+  Equal.to
+
+true: Bool
+  Bool.true
+
+false: Bool
+  Bool.false
+
+unit: Unit
+  Unit.new
+
+add: _
+  Nat.add
+
+sub: _
+  Nat.sub
+
+eql: _
+  Nat.eql

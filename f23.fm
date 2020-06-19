@@ -1,0 +1,13 @@
+// Programando funções
+// ===================
+
+// comparar(a: Cor, b: Cor): a == b ou a != b
+
+amarelar.test.0: Sentido
+  amarelar(azul)<comparar(azul, amarelo)>
+
+amarelar.test.1: Sentido
+  amarelar(verde)<comparar(verde, amarelo)>
+
+// amarelar.test.2: Sentido
+//   amarelar(amarelo)<comparar(amarelo, amarelo)>

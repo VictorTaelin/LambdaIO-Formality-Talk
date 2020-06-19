@@ -1,0 +1,20 @@
+// Funções podem retornar tipos diferentes!
+// ========================================
+
+polifun.type(x: Bool): Type
+  if x then
+    Nat
+  else
+    String
+
+polifun(x: Bool): polifun.type(x)
+  case x:
+  | 1337;
+  | "biscoito";
+  : polifun.type(x.self);
+
+usando_polifun_a: Nat
+  polifun(true)
+
+usando_polifun_b: String
+  polifun(false)

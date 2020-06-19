@@ -1,0 +1,7 @@
+// Programando funções
+// ===================
+
+girar_para(cor: Cor, sentido: Sentido): Cor
+  case sentido:
+  | horario      => girar(cor);
+  | anti_horario => desgirar(cor);

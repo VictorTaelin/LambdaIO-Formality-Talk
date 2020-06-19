@@ -1,0 +1,13 @@
+// Por que provas formais importam?
+// ================================
+
+// 1. Sem provas formais, é impossível "satisfazer" tipos dependentes
+
+# // "FormalityScript"
+function foo(x: Number) {
+  return div(10, x * x + 1, ????);
+} #
+
+// 2. Permite que a linguagem seja usada para prática da matemática!
+
+// 3. Novo tipo de conhecimento

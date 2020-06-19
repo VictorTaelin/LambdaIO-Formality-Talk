@@ -1,0 +1,6 @@
+// Especificando um tipo
+// =====================
+
+T Sentido
+| horario;
+| anti_horario;

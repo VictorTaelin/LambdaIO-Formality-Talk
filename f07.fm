@@ -1,0 +1,8 @@
+// Hello, world!
+// =============
+// - Programa = série de declarações
+// - Declaração = nome, tipo, corpo
+// - IO(Unit) = um monad pra descrever efeitos
+
+main: IO(Unit)
+  IO.print("Hello, world!")

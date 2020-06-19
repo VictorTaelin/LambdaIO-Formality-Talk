@@ -1,0 +1,9 @@
+// A função head
+// =============
+
+// head<T: Type>(list: List(T)): T
+//   case list:
+//   | head => ?what;
+//   | tail => list.head;
+
+// No Haskell, chamar essa função numa lista vazia causa um erro de execução!

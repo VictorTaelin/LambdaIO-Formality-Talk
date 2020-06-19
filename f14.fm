@@ -1,0 +1,5 @@
+// Provando teoremas
+// =================
+
+verde_eh_verde: verde == verde
+  proprio<_, verde>
