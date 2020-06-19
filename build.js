@@ -20,10 +20,10 @@ var slides = [
 //==============================================================================
 `// Por que tipos dependentes importam?
 // ===================================
-// - Evolução dos type systems
-// - Valores e expressões dentro de tipos
-// - Especificar qualquer requisito como um tipo
-// - Tudo checado em tempo de compilação`,
+//
+// R: Permitem colocar valores e expressões no nível dos tipos,
+//    possibilitando que o programador especifique e verifique
+//    requisitos arbitrários em tempo de compilação.`,
 //==============================================================================
 `// Por que tipos dependentes importam?
 // ===================================
