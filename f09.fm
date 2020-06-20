@@ -1,14 +1,6 @@
-// Especificando um tipo
-// =====================
-// - Um tipo é como um conjunto com N elementos
-
-T Cor
-| amarelo;
-| verde;
-| azul;
-| roxo;
-| vermelho;
-| laranja;
-
-cor_favorita: Cor
-  azul
+// Princípios do Formality
+// =======================
+// 1. Especificar tipos
+// 2. Programar funções 
+// 3. Provar teoremas
+// 4. Rodar programas

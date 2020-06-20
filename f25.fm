@@ -1,7 +1,10 @@
-// Programando funções
-// ===================
+// Provando teoremas
+// =================
 
-// alguma_funcao(cor: Cor): Sentido
-//   amarelar(descer(cor))<?what>
+alguma_funcao_2(cor: Cor): Sentido
+  amarelar(descer(cor))<cor_descida_nao_eh_amarelo(cor)>
 
-// Porém, e se a gente fizesse assim?
+// Resumindo...
+// 1. Tipos dependentes restringem o domínio da função arbitrariamente
+// 2. Provas formais convencem o compilador que respeitamos restrições
+// 3. Com isso, criamos funções impossíveis de crashar em execução

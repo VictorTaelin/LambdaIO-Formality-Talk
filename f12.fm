@@ -1,12 +1,12 @@
 // Programando funções
 // ===================
-// - Funções são feitas por análise de casos
+// - Funções são feitas por análise de casos (pattern-matching)
 
-descer(cor: Cor): Cor
+desgirar(cor: Cor): Cor
   case cor:
-  | amarelo  => verde;
-  | verde    => azul;
-  | azul     => roxo;
-  | roxo     => roxo;
+  | amarelo  => laranja;
+  | verde    => amarelo;
+  | azul     => verde;
+  | roxo     => azul;
   | vermelho => roxo;
   | laranja  => vermelho;

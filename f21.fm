@@ -1,14 +1,13 @@
 // Programando funções
 // ===================
 
-# // TypeScript
-function amarelar(cor: Cor): Sentido {
-  switch (cor) {
-    case "amarelo" : throw "Não se pode amarelar o amarelo.";
-    case "verde"   : return "anti_horario";
-    case "azul"    : return "anti_horario";
-    case "roxo"    : return "horario"; // tanto faz
-    case "vermelho": return "horario"; 
-    case "laranja" : return "horario";
-  }
-} #
+// comparar(a: Cor, b: Cor): a == b ou a != b
+
+test.0: Sentido
+  amarelar(azul)<comparar(azul, amarelo)>
+
+test.1: Sentido
+  amarelar(verde)<comparar(verde, amarelo)>
+
+//test.2: Sentido
+  //amarelar(amarelo)<comparar(amarelo, amarelo)>

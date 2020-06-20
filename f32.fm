@@ -1,9 +1,19 @@
-// A função head
-// =============
-
-// head<T: Type>(list: List(T)): T
-//   case list:
-//   | head => ?what;
-//   | tail => list.head;
-
-// No Haskell, chamar essa função numa lista vazia causa um erro de execução!
+// Muitas outras coisas legais...
+// ==============================
+// - O tipo vazio ("do vazio, tudo se cria")
+//   T Empty
+//   void(empty: Empty): 1 == 0
+//     case empty:
+//     : 1 == 0;
+// 
+// - Pares dependentes como sub-tipos
+//   - numeros que sejam primos...
+//   - listas que sejam ordenadas...
+// 
+// - Funções que retornam tipos diferentes (e *não* um "Either")...
+//   - polifun(x: Bool): if x then Nat else String
+//       case x:
+//       | true  => 1337;
+//       | false => "biscoito";
+// 
+// - Interaction nets, optimal reductions, linearidade...

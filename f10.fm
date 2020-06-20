@@ -1,12 +1,14 @@
-// Programando funções
-// ===================
-// - Funções são feitas por análise de casos
+// Especificando um tipo
+// =====================
+// - Um tipo é como um conjunto com N elementos
 
-girar(cor: Cor): Cor
-  case cor:
-  | amarelo  => verde;
-  | verde    => azul;
-  | azul     => roxo;
-  | roxo     => vermelho;
-  | vermelho => laranja;
-  | laranja  => amarelo;
+T Cor
+| amarelo;
+| verde;
+| azul;
+| roxo;
+| vermelho;
+| laranja;
+
+cor_favorita: Cor
+  azul

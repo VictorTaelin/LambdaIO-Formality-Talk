@@ -1,5 +1,20 @@
 // Provando teoremas
 // =================
+// 
+//                    \/ Isso é um tipo! (com variáveis...)
+verde_eh_verde: verde == verde
+  proprio<_, verde>   // Isso é um valor... ou uma... *prova*!? :0
 
-cor_favorita_eh_azul: cor_favorita == azul
-  proprio<_, azul>
+// Tipo dependente é só um              tipo com variáveis!
+// Prova formal    é só um (valor cujo) tipo tem variáveis!
+
+
+
+
+
+
+
+
+
+
+//                                sevcdiscordadessadefiniçãovemprox1noob

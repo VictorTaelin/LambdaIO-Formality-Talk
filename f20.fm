@@ -1,11 +1,14 @@
 // Programando funções
 // ===================
 
-// amarelar(cor: Cor): Sentido
-//   case cor:
-//   | amarelo  => ?what;
-//   | verde    => anti_horario;
-//   | azul     => anti_horario;
-//   | roxo     => horario; // tanto faz
-//   | vermelho => horario;
-//   | laranja  => horario;
+amarelar(cor: Cor)<naorelo: cor != amarelo>: Sentido
+  case cor:
+  with naorelo : cor.self != amarelo = naorelo;
+  | amarelo  => absurdo<>(naorelo(_));
+  | verde    => anti_horario;
+  | azul     => anti_horario;
+  | roxo     => horario;
+  | vermelho => horario;
+  | laranja  => horario;
+
+// Com tipos dependentes, é possível previnir qualquer erro de execução ("bug")!

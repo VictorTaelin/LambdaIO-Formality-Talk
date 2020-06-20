@@ -1,5 +1,7 @@
 // Provando teoremas
 // =================
 
-// azul_eh_vermelho: azul == vermelho
-//  ?a
+cor_favorita_eh_azul: cor_favorita == azul
+  proprio<_, azul>
+  
+// Mas e se a gente mudar 'azul' pra 'amarelo'?

@@ -5,18 +5,22 @@ var slides = [
 //     O futuro inevitável de linguagens tipadas?     //
 //                                                    //
 //                   ============..                   //
-//                   \\  \\      ||                   //
-//                    \\  \\=====''                   //
-//                     \\  \\===..                    //
-//                     /\\  \\  ||                    //
-//                    // \\  \\=''                    //
-//                   //  /X\  \\                      //
-//                  //  // \\  \\                     //
-//                 |/__//   \\__\|                    //
+//                   \\\\  \\\\      ||                   //
+//                    \\\\  \\\\=====''                   //
+//                     \\\\  \\\\===..                    //
+//                     /\\\\  \\\\  ||                    //
+//                    // \\\\  \\\\=''                    //
+//                   //  /X\\\  \\\\                      //
+//                  //  // \\\\  \\\\                     //
+//                 |/__//   \\\\__\\\|                    //
 //                                                    //
 //                                                    //
 //     por Victor Maia, CTO da Sunshine Cybernetics   //
-//____________________________________________________//`,
+//____________________________________________________//
+//
+//
+//
+// (busqueumaexplicaçãomaissimplesefalhecomoumprogramaimperativo)`,
 //==============================================================================
 `// Por que tipos dependentes importam?
 // ===================================
@@ -24,6 +28,17 @@ var slides = [
 // R: Permitem colocar valores e expressões no nível dos tipos,
 //    possibilitando que o programador especifique e verifique
 //    requisitos arbitrários em tempo de compilação.`,
+//==============================================================================
+`// Por que tipos dependentes importam?
+// ===================================
+
+# // JavaScript
+function div(a, b) {
+  return a / b;
+} #
+
+// Problema: div("foo", 0) = ?
+`,
 //==============================================================================
 `// Por que tipos dependentes importam?
 // ===================================
@@ -38,7 +53,7 @@ function div(a, b) {
 
 // Checagem em tempo de execução:
 // 1. Afeta performance
-// 2. Crasha o programa
+// 2. O avião cai
 `,
 //==============================================================================
 `// Por que tipos dependentes importam?
@@ -50,18 +65,20 @@ function div(a: Number, b: Number) {
   return a / b;
 } #
 
-// Melhor, mas ainda checa algo em tempo de execução`,
+// Melhor, mas ainda checa algo em tempo de execução...`,
 //==============================================================================
 `// Por que tipos dependentes importam?
 // ===================================
 
-# // "FormalityScript"
+# // "FormalityScript"                  \\/ isso é um tipo!
 function div(a: Number, b: Number, p: b != 0) {
   return a / b;
 } #
 
-// Perfeito!`,
-//==============================================================================
+// O terceiro argumento *depende* do valor do segundo.
+// Ele restringe seu *valor* de forma arbitrária.
+// É *impossível* div crashar seu programa.`,
+//==============================================================================`
 `// Por que provas formais importam?
 // ================================
 
@@ -83,7 +100,7 @@ function foo(x: Number) {
 // - Tipos dependentes e provas formais
 // - Minimalista: interpreter + type-checker = 500 LOC
 // - Sintaxe familiar (estilo JavaScript)
-// - Eficiente (compila pra .js, .hs ou .fmnet)
+// - Eficiente (compila pra .js, .hs ou fm-net)
 // - Moonad.org: package manager ou rede social?`,
 //==============================================================================
 `// Hello, world!
@@ -120,7 +137,7 @@ cor_favorita: Cor
 //==============================================================================
 `// Programando funções
 // ===================
-// - Funções são feitas por análise de casos
+// - Funções são feitas por análise de casos (pattern-matching)
 
 girar(cor: Cor): Cor
   case cor:
@@ -133,7 +150,7 @@ girar(cor: Cor): Cor
 //==============================================================================
 `// Programando funções
 // ===================
-// - Funções são feitas por análise de casos
+// - Funções são feitas por análise de casos (pattern-matching)
 
 desgirar(cor: Cor): Cor
   case cor:
@@ -146,7 +163,7 @@ desgirar(cor: Cor): Cor
 //==============================================================================
 `// Programando funções
 // ===================
-// - Funções são feitas por análise de casos
+// - Funções são feitas por análise de casos (pattern-matching)
 
 descer(cor: Cor): Cor
   case cor:
@@ -159,7 +176,7 @@ descer(cor: Cor): Cor
 //==============================================================================
 `// Programando funções
 // ===================
-// - Funções são feitas por análise de casos
+// - Funções são feitas por análise de casos (pattern-matching)
 
 subir(cor: Cor): Cor
   case cor:
@@ -172,27 +189,34 @@ subir(cor: Cor): Cor
 //==============================================================================
 `// Provando teoremas
 // =================
-
+// 
+//                    \\/ Isso é um tipo! (com variáveis...)
 verde_eh_verde: verde == verde
-  proprio<_, verde>`,
+  proprio<_, verde>   // Isso é um valor... ou uma... *prova*!? :0
+
+// Tipo dependente é só um              tipo com variáveis!
+// Prova formal    é só um (valor cujo) tipo tem variáveis!
+
+
+
+
+
+
+
+
+
+
+//                                sevcdiscordadessadefiniçãovemprox1noob
+`, 
 //==============================================================================
 `// Provando teoremas
 // =================
 
 cor_favorita_eh_azul: cor_favorita == azul
-  proprio<_, azul>`,
-//==============================================================================
-`// Provando teoremas
-// =================
-
-// azul_eh_vermelho: azul == vermelho
-//  ?a`,
-//==============================================================================
-`// Provando teoremas
-// =================
-
-// azul_eh_vermelho: azul == vermelho
-//  ?a`,
+  proprio<_, azul>
+  
+// Mas e se a gente mudar 'azul' pra 'amarelo'?
+`,
 //==============================================================================
 `// Especificando um tipo
 // =====================
@@ -200,15 +224,6 @@ cor_favorita_eh_azul: cor_favorita == azul
 T Sentido
 | horario;
 | anti_horario;`,
-//==============================================================================
-`// Programando funções
-// ===================
-
-girar_para(cor: Cor, sentido: Sentido): Cor
-  case sentido:
-  | horario      => girar(cor);
-  | anti_horario => desgirar(cor);
-`,
 //==============================================================================
 `// Programando funções
 // ===================
@@ -240,10 +255,10 @@ function amarelar(cor: Cor): Sentido {
 `// Programando funções
 // ===================
 
-amarelar(cor: Cor)<odirelo: cor != amarelo>: Sentido
+amarelar(cor: Cor)<naorelo: cor != amarelo>: Sentido
   case cor:
-  with odirelo : cor.self != amarelo = odirelo;
-  | amarelo  => absurdo<>(odirelo(_));
+  with naorelo : cor.self != amarelo = naorelo;
+  | amarelo  => absurdo<>(naorelo(_));
   | verde    => anti_horario;
   | azul     => anti_horario;
   | roxo     => horario;
@@ -258,20 +273,20 @@ amarelar(cor: Cor)<odirelo: cor != amarelo>: Sentido
 
 // comparar(a: Cor, b: Cor): a == b ou a != b
 
-amarelar.test.0: Sentido
+test.0: Sentido
   amarelar(azul)<comparar(azul, amarelo)>
 
-amarelar.test.1: Sentido
+test.1: Sentido
   amarelar(verde)<comparar(verde, amarelo)>
 
-// amarelar.test.2: Sentido
+// test.2: Sentido
 //   amarelar(amarelo)<comparar(amarelo, amarelo)>
 `,
 //==============================================================================
 `// Programando funções
 // ===================
 
-// alguma_funcao(cor: Cor): Sentido
+// alguma_funcao_0(cor: Cor): Sentido
 //   amarelar(cor)<?what>
 
 // Impossível chamar amarelar em uma variável "cor"!
@@ -280,7 +295,7 @@ amarelar.test.1: Sentido
 `// Programando funções
 // ===================
 
-// alguma_funcao(cor: Cor): Sentido
+// alguma_funcao_1(cor: Cor): Sentido
 //   amarelar(descer(cor))<?what>
 
 // Porém, e se a gente fizesse assim?
@@ -303,10 +318,13 @@ cor_descida_nao_eh_amarelo(cor: Cor): descer(cor) != amarelo
 `// Provando teoremas
 // =================
 
-alguma_funcao(cor: Cor): Sentido
+alguma_funcao_2(cor: Cor): Sentido
   amarelar(descer(cor))<cor_descida_nao_eh_amarelo(cor)>
 
-// Chamada da função desbloqueada pela prova que descer(cor) != amarelo!
+// Resumindo...
+// 1. Tipos dependentes restringem o domínio da função arbitrariamente
+// 2. Provas formais convencem o compilador que respeitamos restrições
+// 3. Com isso, criamos funções impossíveis de crashar em execução
 `,
 //==============================================================================
 `// Provando teoremas
@@ -332,12 +350,6 @@ alguma_funcao(cor: Cor): Sentido
 // Provar teoremas nos ajuda a achar problemas no nosso código!
 `,
 //==============================================================================
-`// Random time!
-// ============
-
-// Já que sobrou tempo, falarei de coisas legais aleatórias!
-`,
-//==============================================================================
 `// O tipo lista
 // ============
 
@@ -355,8 +367,8 @@ T List<T: Type>
 
 // head<T: Type>(list: List(T)): T
 //   case list:
-//   | head => ?what;
-//   | tail => list.head;
+//   | nil  => ?what;
+//   | cons => list.head;
 
 // No Haskell, chamar essa função numa lista vazia causa um erro de execução!
 `,
@@ -367,7 +379,7 @@ T List<T: Type>
 head<T: Type>(list: List(T), not_empty: list != nil<T>): T
   case list:
   with not_empty : list.self != nil<T> = not_empty;
-  | nil  => Empty.absurd<>(not_empty(_));
+  | nil  => absurdo<>(not_empty(_));
   | cons => list.head;
 
 // No Formality, podemos evitar esse erro em tempo de compilação.
@@ -387,102 +399,125 @@ um_vetor: Vector(Cor, 3)
   v_nil<Cor>)))
 `,
 //==============================================================================
-`// Funções podem retornar tipos diferentes!
-// ========================================
-
-polifun.type(x: Bool): Type
-  if x then
-    Nat
-  else
-    String
-
-polifun(x: Bool): polifun.type(x)
-  case x:
-  | 1337;
-  | "biscoito";
-  : polifun.type(x.self);
-
-usando_polifun_a: Nat
-  polifun(true)
-
-usando_polifun_b: String
-  polifun(false)
-`,
-//==============================================================================
-`// O tipo vazio
-// ============
-
-// Cor tem 6 elementos, Bool tem 2, Unit tem 1... Vazio tem 0?
-
-// T Bool
-// | true;
-// | false;
-
-// T Unit
-// | unit;
-
-// T Empty`,
-//==============================================================================
-`// O critério da análise de casos
+`// Muitas outras coisas legais...
 // ==============================
-
-bool_to_string(bool: Bool): String
-  case bool:
-  | true  => "true";
-  | false => "false";
-  : String;
-
-unit_to_string(unit: Unit): String
-  case unit:
-  | unit => "unit";
-  : String;
-
-empty_to_string(empty: Empty): String
-  case empty:
-  : String;
+// - O tipo vazio ("do vazio, tudo se cria")
+//   T Empty
+//   void(empty: Empty): 1 == 0
+//     case empty:
+//     : 1 == 0;
+// 
+// - Pares dependentes como sub-tipos
+//   - numeros que sejam primos...
+//   - listas que sejam ordenadas...
+// 
+// - Funções que retornam tipos diferentes (e *não* um "Either")...
+//   - polifun(x: Bool): if x then Nat else String
+//       case x:
+//       | true  => 1337;
+//       | false => "biscoito";
+// 
+// - Interaction nets, optimal reductions, linearidade...
 `,
 //==============================================================================
-`// Do vazio, tudo se cria
-// ======================
+//`// Funções podem retornar tipos diferentes!
+//// ========================================
 
-void(empty: Empty): 1 == 0
-  case empty:
-  : 1 == 0;
-`,
+//polifun.type(x: Bool): Type
+  //if x then
+    //Nat
+  //else
+    //String
+
+//polifun(x: Bool): polifun.type(x)
+  //case x:
+  //| 1337;
+  //| "biscoito";
+  //: polifun.type(x.self);
+
+//usando_polifun_a: Nat
+  //polifun(true)
+
+//usando_polifun_b: String
+  //polifun(false)
+//`,
 //==============================================================================
-`// Usando o vazio para restringir funções
-// ======================================
+//`// O tipo vazio
+//// ============
 
-IsTrue(x: Bool): Type
-  case x:
-  | true  => Unit;
-  | false => Empty;
+//// Cor tem 6 elementos, Bool tem 2, Unit tem 1... Vazio tem 0?
 
-so_verdadeiro(x: Bool, vdd: IsTrue(x)): String
-  "deu certo"
+//// T Bool
+//// | true;
+//// | false;
 
-chamando: String
-  so_verdadeiro(true, unit)
-`,
+//// T Unit
+//// | unit;
+
+//// T Empty`,
 //==============================================================================
-`// O tipo Subset
-// =============
+//`// O critério da análise de casos
+//// ==============================
 
-T Subset<A: Type, B: A -> Type>
-| subset(a: A)<b: B(a)>;
+//bool_to_string(bool: Bool): String
+  //case bool:
+  //| true  => "true";
+  //| false => "false";
+  //: String;
 
-TrueBool: Type
-  Subset(Bool, IsTrue)
+//unit_to_string(unit: Unit): String
+  //case unit:
+  //| unit => "unit";
+  //: String;
 
-so_verdadeiro_2(x: TrueBool): String
-  "deu certo"
+//empty_to_string(empty: Empty): String
+  //case empty:
+  //: String;
+//`,
+//==============================================================================
+//`// Do vazio, tudo se cria
+//// ======================
 
-chamando_2: String
-  so_verdadeiro_2(subset<Bool,IsTrue>(true)<unit>)
-`,
+//void(empty: Empty): 1 == 0
+  //case empty:
+  //: 1 == 0;
+//`,
+//==============================================================================
+//`// Usando o vazio para restringir funções
+//// ======================================
+
+//IsTrue(x: Bool): Type
+  //case x:
+  //| true  => Unit;
+  //| false => Empty;
+
+//so_verdadeiro(x: Bool, vdd: IsTrue(x)): String
+  //"deu certo"
+
+//chamando: String
+  //so_verdadeiro(true, unit)
+//`,
+//==============================================================================
+//`// O tipo Subset
+//// =============
+
+//T Subset<A: Type, B: A -> Type>
+//| subset(a: A)<b: B(a)>;
+
+//TrueBool: Type
+  //Subset(Bool, IsTrue)
+
+//so_verdadeiro_2(x: TrueBool): String
+  //"deu certo"
+
+//chamando_2: String
+  //so_verdadeiro_2(subset<Bool,IsTrue>(true)<unit>)
+//`,
 //==============================================================================
 `// Rodando
 // =======
+// npm i -g formality-lang
+// fmjs exemplo >> cmp.js
 
 somatorio(sum: Nat, n: Nat): Nat
   if Nat.eql(n, 0) then

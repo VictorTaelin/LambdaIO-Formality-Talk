@@ -1,13 +1,11 @@
-// Por que provas formais importam?
-// ================================
+// Por que tipos dependentes importam?
+// ===================================
 
-// 1. Sem provas formais, é impossível "satisfazer" tipos dependentes
-
-# // "FormalityScript"
-function foo(x: Number) {
-  return div(10, x * x + 1, ????);
+# // "FormalityScript"                  \/ isso é um tipo!
+function div(a: Number, b: Number, p: b != 0) {
+  return a / b;
 } #
 
-// 2. Permite que a linguagem seja usada para prática da matemática!
-
-// 3. Novo tipo de conhecimento
+// O terceiro argumento *depende* do valor do segundo.
+// Ele restringe seu *valor* de forma arbitrária.
+// É *impossível* div crashar seu programa.

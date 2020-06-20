@@ -1,5 +1,12 @@
-// Provando teoremas
-// =================
+// Programando funções
+// ===================
+// - Funções são feitas por análise de casos (pattern-matching)
 
-verde_eh_verde: verde == verde
-  proprio<_, verde>
+subir(cor: Cor): Cor
+  case cor:
+  | amarelo  => amarelo;
+  | verde    => amarelo;
+  | azul     => verde;
+  | roxo     => vermelho;
+  | vermelho => laranja;
+  | laranja  => amarelo;

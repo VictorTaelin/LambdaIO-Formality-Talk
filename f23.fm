@@ -1,13 +1,7 @@
 // Programando funções
 // ===================
 
-// comparar(a: Cor, b: Cor): a == b ou a != b
+//alguma_funcao_1(cor: Cor): Sentido
+  //amarelar(descer(cor))<?what>
 
-amarelar.test.0: Sentido
-  amarelar(azul)<comparar(azul, amarelo)>
-
-amarelar.test.1: Sentido
-  amarelar(verde)<comparar(verde, amarelo)>
-
-// amarelar.test.2: Sentido
-//   amarelar(amarelo)<comparar(amarelo, amarelo)>
+// Porém, e se a gente fizesse assim?

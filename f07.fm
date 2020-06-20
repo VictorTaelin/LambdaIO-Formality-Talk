@@ -1,8 +1,8 @@
-// Hello, world!
-// =============
-// - Programa = série de declarações
-// - Declaração = nome, tipo, corpo
-// - IO(Unit) = um monad pra descrever efeitos
-
-main: IO(Unit)
-  IO.print("Hello, world!")
+// Formality
+// =========
+// - Puramente funcional (como Haskell)
+// - Tipos dependentes e provas formais
+// - Minimalista: interpreter + type-checker = 500 LOC
+// - Sintaxe familiar (estilo JavaScript)
+// - Eficiente (compila pra .js, .hs ou fm-net)
+// - Moonad.org: package manager ou rede social?

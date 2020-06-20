@@ -1,7 +1,15 @@
 // Provando teoremas
 // =================
 
-alguma_funcao(cor: Cor): Sentido
-  amarelar(descer(cor))<cor_descida_nao_eh_amarelo(cor)>
+teorema_giratorio(cor: Cor): desgirar(girar(cor)) == cor
+  case cor:
+  | amarelo  => proprio<_, amarelo>;
+  | verde    => proprio<_, verde>;
+  | azul     => proprio<_, azul>;
+  | roxo     => proprio<_, roxo>;
+  | vermelho => proprio<_, vermelho>;
+  | laranja  => proprio<_, laranja>;
+  : desgirar(girar(cor.self)) == cor.self;
 
-// Chamada da função desbloqueada pela prova que descer(cor) != amarelo!
+
+// Provar teoremas nos ajuda a achar problemas no nosso código!

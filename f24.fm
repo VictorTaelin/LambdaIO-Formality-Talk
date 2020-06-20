@@ -1,7 +1,12 @@
-// Programando funções
-// ===================
+// Provando teoremas
+// =================
 
-// alguma_funcao(cor: Cor): Sentido
-//   amarelar(cor)<?what>
-
-// Impossível chamar amarelar em uma variável "cor"!
+cor_descida_nao_eh_amarelo(cor: Cor): descer(cor) != amarelo
+  case cor:
+  | amarelo  => comparar(verde, amarelo);
+  | verde    => comparar(azul, amarelo);
+  | azul     => comparar(roxo, amarelo);
+  | roxo     => comparar(roxo, amarelo);
+  | vermelho => comparar(roxo, amarelo);
+  | laranja  => comparar(vermelho, amarelo);
+  : descer(cor.self) != amarelo;

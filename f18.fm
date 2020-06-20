@@ -1,6 +1,11 @@
-// Especificando um tipo
-// =====================
+// Programando funções
+// ===================
 
-T Sentido
-| horario;
-| anti_horario;
+// amarelar(cor: Cor): Sentido
+//   case cor:
+//   | amarelo  => ?what;
+//   | verde    => anti_horario;
+//   | azul     => anti_horario;
+//   | roxo     => horario; // tanto faz
+//   | vermelho => horario;
+//   | laranja  => horario;

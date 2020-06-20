@@ -1,12 +1,5 @@
-// O tipo vetor
-// ============
+// Moonad.org
+// ==========
 
-T Vector<T: Type>                            ~ (size: Nat)
-| v_nil                                      ~ (0);
-| v_cons<n: Nat>(head: T, tail: Vector(T,n)) ~ (Nat.succ(n));
-
-um_vetor: Vector(Cor, 3)
-  v_cons<Cor,2>(verde,
-  v_cons<Cor,1>(vermelho,
-  v_cons<Cor,0>(azul,
-  v_nil<Cor>)))
+meu_exemplo: String
+  MaiaVictor.example.0(Bool.true)

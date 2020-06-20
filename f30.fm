@@ -1,4 +1,10 @@
-// Random time!
-// ============
+// Primeiro elemento
+// =================
 
-// Já que sobrou tempo, falarei de coisas legais aleatórias!
+head<T: Type>(list: List(T), not_empty: list != nil<T>): T
+  case list:
+  with not_empty : list.self != nil<T> = not_empty;
+  | nil  => absurdo<>(not_empty(_));
+  | cons => list.head;
+
+// No Formality, podemos evitar esse erro em tempo de compilação.

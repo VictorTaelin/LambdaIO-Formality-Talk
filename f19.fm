@@ -1,7 +1,14 @@
 // Programando funções
 // ===================
 
-girar_para(cor: Cor, sentido: Sentido): Cor
-  case sentido:
-  | horario      => girar(cor);
-  | anti_horario => desgirar(cor);
+# // TypeScript
+function amarelar(cor: Cor): Sentido {
+  switch (cor) {
+    case "amarelo" : throw "Não se pode amarelar o amarelo.";
+    case "verde"   : return "anti_horario";
+    case "azul"    : return "anti_horario";
+    case "roxo"    : return "horario"; // tanto faz
+    case "vermelho": return "horario"; 
+    case "laranja" : return "horario";
+  }
+} #

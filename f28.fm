@@ -1,5 +1,10 @@
-// Provando teoremas
-// =================
+// O tipo lista
+// ============
 
-// teorema_giratorio(cor: Cor): desgirar(girar(cor)) == cor
-//  ?what
+// Uma lista de T é:
+// - Uma lista vazia (nil);
+// - Ou a junção (cons) de uma cor a uma lista de outras cores;
+
+T List<T: Type>
+| nil;
+| cons(head: T, tail: List(T));

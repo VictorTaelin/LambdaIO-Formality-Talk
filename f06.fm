@@ -1,8 +1,13 @@
-// Formality
-// =========
-// - Puramente funcional (como Haskell)
-// - Tipos dependentes e provas formais
-// - Minimalista: interpreter + type-checker = 500 LOC
-// - Sintaxe familiar (estilo JavaScript)
-// - Eficiente (compila pra .js, .hs ou .fmnet)
-// - Moonad.org: package manager ou rede social?
+// Por que provas formais importam?
+// ================================
+
+// 1. Sem provas formais, é impossível "satisfazer" tipos dependentes
+
+# // "FormalityScript"
+function foo(x: Number) {
+  return div(10, x * x + 1, ????);
+} #
+
+// 2. Permite que a linguagem seja usada para prática da matemática!
+
+// 3. Novo tipo de conhecimento

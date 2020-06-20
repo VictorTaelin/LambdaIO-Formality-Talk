@@ -1,14 +1,9 @@
-// Provando teoremas
-// =================
+// A função head
+// =============
 
-// teorema_giratorio(cor: Cor): desgirar(girar(cor)) == cor
-//   case cor:
-//   | amarelo  => proprio<_, amarelo>;
-//   | verde    => proprio<_, verde>;
-//   | azul     => proprio<_, azul>;
-//   | roxo     => proprio<_, roxo>;
-//   | vermelho => proprio<_, vermelho>;
-//   | laranja  => proprio<_, laranja>;
-//   : desgirar(girar(cor.self)) == cor.self;
+// head<T: Type>(list: List(T)): T
+//   case list:
+//   | nil  => ?what;
+//   | cons => list.head;
 
-// Provar teoremas nos ajuda a achar problemas no nosso código!
+// No Haskell, chamar essa função numa lista vazia causa um erro de execução!

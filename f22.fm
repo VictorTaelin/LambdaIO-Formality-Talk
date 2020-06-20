@@ -1,14 +1,7 @@
 // Programando funções
 // ===================
 
-amarelar(cor: Cor)<odirelo: cor != amarelo>: Sentido
-  case cor:
-  with odirelo : cor.self != amarelo = odirelo;
-  | amarelo  => absurdo<>(odirelo(_));
-  | verde    => anti_horario;
-  | azul     => anti_horario;
-  | roxo     => horario;
-  | vermelho => horario;
-  | laranja  => horario;
+//alguma_funcao_0(cor: Cor): Sentido
+//  amarelar(cor)<comparar(cor, amarelo)>
 
-// Com tipos dependentes, é possível previnir qualquer erro de execução ("bug")!
+// Impossível chamar amarelar em uma variável "cor"!

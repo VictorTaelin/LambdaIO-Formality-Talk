@@ -1,9 +1,10 @@
 // Por que tipos dependentes importam?
 // ===================================
 
-# // "FormalityScript"
-function div(a: Number, b: Number, p: b != 0) {
+# // TypeScript
+function div(a: Number, b: Number) {
+  assert(b !== 0);
   return a / b;
 } #
 
-// Perfeito!
+// Melhor, mas ainda checa algo em tempo de execução...

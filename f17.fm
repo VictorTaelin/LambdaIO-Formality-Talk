@@ -1,5 +1,6 @@
-// Provando teoremas
-// =================
+// Especificando um tipo
+// =====================
 
-// azul_eh_vermelho: azul == vermelho
-//  ?a
+T Sentido
+| horario;
+| anti_horario;
